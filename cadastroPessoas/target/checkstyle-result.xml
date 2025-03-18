@@ -2,6 +2,10 @@
 <checkstyle version="8.45.1">
 <file name="F:\ws\Sinerji\cadastroPessoas\src\main\java\com\sinerji\App.java">
 </file>
+<file name="F:\ws\Sinerji\cadastroPessoas\src\main\java\com\sinerji\model\Pessoa.java">
+</file>
+<file name="F:\ws\Sinerji\cadastroPessoas\src\main\java\com\sinerji\model\Endereco.java">
+</file>
 <file name="F:\ws\Sinerji\cadastroPessoas\src\test\java\com\sinerji\AppTest.java">
 </file>
 <file name="F:\ws\Sinerji\cadastroPessoas\src\main\resources\db.properties">

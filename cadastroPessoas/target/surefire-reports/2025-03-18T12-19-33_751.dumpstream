@@ -1,4 +1,4 @@
-# Created at 2025-03-18T11:28:16.166
+# Created at 2025-03-18T12:19:35.080
 Boot Manifest-JAR contains absolute paths in classpath 'F:\ws\Sinerji\cadastroPessoas\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 
