@@ -1,0 +1,5 @@
+# Configurações de banco de dados
+spring.datasource.url=jdbc:postgresql://localhost:5432/seubanco
+spring.datasource.username=usuario
+spring.datasource.password=senha
+spring.jpa.hibernate.ddl-auto=update
