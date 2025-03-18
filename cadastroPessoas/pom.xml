@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.sinerji</groupId>
-  <artifactId>cadastroPessoas</artifactId> <!-- Nome atualizado para cadastroPessoas -->
+  <artifactId>cadastroPessoas</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
@@ -16,7 +16,6 @@
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
     <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
-    <!-- JaCoCo thresholds. Increase gradually as you add tests. -->
     <jacoco.unit-tests.limit.instruction-ratio>0%</jacoco.unit-tests.limit.instruction-ratio>
     <jacoco.unit-tests.limit.branch-ratio>0%</jacoco.unit-tests.limit.branch-ratio>
     <jacoco.unit-tests.limit.class-complexity>20</jacoco.unit-tests.limit.class-complexity>
@@ -43,20 +42,21 @@
       <groupId>javax.faces</groupId>
       <artifactId>javax.faces-api</artifactId>
       <version>2.3</version>
+      <scope>provided</scope> <!-- Garantir que o Tomcat forneça a implementação -->
     </dependency>
 
     <!-- PrimeFaces -->
     <dependency>
-          <groupId>org.primefaces</groupId>
-          <artifactId>primefaces</artifactId>
-          <version>15.0.1</version>
+      <groupId>org.primefaces</groupId>
+      <artifactId>primefaces</artifactId>
+      <version>10.0.0</version> <!-- Versão estável e mais recente do PrimeFaces -->
     </dependency>
 
     <!-- Hibernate (JPA) -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>5.5.7.Final</version>
+      <version>5.5.7.Final</version> <!-- Versão estável do Hibernate -->
     </dependency>
 
     <!-- EJB -->
@@ -73,13 +73,12 @@
       <version>2.2</version>
     </dependency>
 
-
     <!-- H2 Database (para testes) -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <version>1.4.200</version>
-      <scope>test</scope>
+      <scope>test</scope> <!-- Usado apenas para testes -->
     </dependency>
 
     <!-- PostgreSQL (para produção) -->
@@ -88,6 +87,15 @@
       <artifactId>postgresql</artifactId>
       <version>42.2.5</version>
     </dependency>
+
+    <!-- Tomcat (para execução em ambiente de desenvolvimento) -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-juli</artifactId>
+      <version>9.0.56</version>
+      <scope>provided</scope> <!-- Garantir que o Tomcat forneça a implementação -->
+    </dependency>
+
   </dependencies>
 
   <repositories>
@@ -96,8 +104,8 @@
       <url>https://repo.maven.apache.org/maven2</url>
     </repository>
     <repository>
-        <id>primefaces-repo</id>
-        <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+      <id>primefaces-repo</id>
+      <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
     </repository>
   </repositories>
 
@@ -241,4 +249,5 @@
       </plugin>
     </plugins>
   </reporting>
+
 </project>

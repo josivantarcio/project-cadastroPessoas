@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Listagem de Pessoas</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Pessoas Cadastradas">
+                <p:dataTable value="#{pessoaBean.listaPessoas}" var="pessoa">
+                    <p:column headerText="Nome">
+                        #{pessoa.nome}
+                    </p:column>
+                    <p:column headerText="Email">
+                        #{pessoa.email}
+                    </p:column>
+                    <p:column headerText="Telefone">
+                        #{pessoa.telefone}
+                    </p:column>
+                    <p:column headerText="Ações">
+                        <p:commandButton value="Editar" action="#{pessoaBean.editar(pessoa)}" update=":form" />
+                        <p:commandButton value="Excluir" action="#{pessoaBean.excluir(pessoa)}" update="msgs" />
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+
+        <p:growl id="msgs" showDetail="true" />
+    </h:body>
+</html>

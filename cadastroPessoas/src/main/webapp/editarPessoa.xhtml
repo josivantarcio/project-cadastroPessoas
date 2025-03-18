@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Edição de Pessoa</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Editar Pessoa">
+                <h:panelGrid columns="2">
+                    <h:outputLabel for="nome" value="Nome:" />
+                    <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" />
+
+                    <h:outputLabel for="email" value="Email:" />
+                    <p:inputText id="email" value="#{pessoaBean.pessoa.email}" required="true" />
+
+                    <h:outputLabel for="telefone" value="Telefone:" />
+                    <p:inputText id="telefone" value="#{pessoaBean.pessoa.telefone}" required="true" />
+                </h:panelGrid>
+                <p:commandButton value="Salvar" action="#{pessoaBean.atualizar}" update="msgs" />
+            </p:panel>
+
+            <p:growl id="msgs" showDetail="true" />
+        </h:form>
+    </h:body>
+</html>

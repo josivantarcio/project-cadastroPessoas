@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PessoaBean.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">cadastroPessoas</a> &gt; <a href="index.source.html" class="el_package">com.sinerji.bean</a> &gt; <span class="el_source">PessoaBean.java</span></div><h1>PessoaBean.java</h1><pre class="source lang-java linenums">package com.sinerji.bean;
+
+import com.sinerji.model.Pessoa;
+import com.sinerji.service.PessoaService;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+/**
+ * ManagedBean responsável pela manipulação dos dados de pessoa.
+ * Este bean gerencia as operações de criação, edição, exclusão e listagem de
+ * pessoas.
+ */
+@ManagedBean
+@RequestScoped
+<span class="nc" id="L16">public class PessoaBean {</span>
+
+    /**
+     * Representa uma pessoa a ser manipulada.
+     */
+<span class="nc" id="L21">    private Pessoa pessoaAtual = new Pessoa(); // Renomeado para 'pessoaAtual'</span>
+
+    /**
+     * Serviço para realizar operações sobre a pessoa.
+     */
+<span class="nc" id="L26">    private PessoaService pessoaService = new PessoaService();</span>
+
+    /**
+     * Lista de todas as pessoas cadastradas.
+     */
+    private List&lt;Pessoa&gt; pessoas;
+
+    /**
+     * Salva a pessoa e redireciona para a página de listagem.
+     *
+     * @return A string de navegação para a página de listagem.
+     */
+    public String salvar() {
+<span class="nc" id="L39">        pessoaService.salvar(pessoaAtual); // Alterado para 'pessoaAtual'</span>
+<span class="nc" id="L40">        return &quot;listagemPessoas?faces-redirect=true&quot;; // Redireciona para a lista após salvar</span>
+    }
+
+    /**
+     * Obtém a lista de todas as pessoas cadastradas.
+     *
+     * @return A lista de pessoas.
+     */
+    public List&lt;Pessoa&gt; getPessoas() {
+<span class="nc" id="L49">        return pessoaService.listarTodas();</span>
+    }
+
+    /**
+     * Edita a pessoa e redireciona para a página de listagem.
+     *
+     * @return A string de navegação para a página de listagem.
+     */
+    public String editar() {
+<span class="nc" id="L58">        pessoaService.atualizar(pessoaAtual); // Alterado para 'pessoaAtual'</span>
+<span class="nc" id="L59">        return &quot;listagemPessoas?faces-redirect=true&quot;; // Redireciona para a lista após editar</span>
+    }
+
+    /**
+     * Exclui a pessoa e não retorna nada, já que o redirecionamento é feito na
+     * lista.
+     *
+     * @param pessoa A pessoa a ser excluída.
+     */
+    public void excluir(Pessoa pessoa) {
+<span class="nc" id="L69">        pessoaService.deletar(pessoa.getId());</span>
+<span class="nc" id="L70">    }</span>
+
+    // Getters e Setters
+
+    /**
+     * Obtém a pessoa a ser manipulada.
+     *
+     * @return A pessoa.
+     */
+    public Pessoa getPessoa() {
+<span class="nc" id="L80">        return pessoaAtual; // Alterado para 'pessoaAtual'</span>
+    }
+
+    /**
+     * Define a pessoa a ser manipulada.
+     *
+     * @param pessoa A pessoa a ser definida.
+     */
+    public void setPessoa(Pessoa pessoa) {
+<span class="nc" id="L89">        this.pessoaAtual = pessoa; // Alterado para 'pessoaAtual'</span>
+<span class="nc" id="L90">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

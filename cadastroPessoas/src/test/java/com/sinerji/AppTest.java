@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Unit test for simple App.
+ * teste simples.
  */
 class AppTest {
     /**
-     * Rigorous Test.
+     * teste rigoroso.
      */
     @Test
     void testApp() {
