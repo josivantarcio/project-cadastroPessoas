@@ -1,0 +1,5 @@
+com\sinerji\App.class
+com\sinerji\model\Pessoa.class
+com\sinerji\bean\PessoaBean.class
+com\sinerji\model\Endereco.class
+com\sinerji\service\PessoaService.class
