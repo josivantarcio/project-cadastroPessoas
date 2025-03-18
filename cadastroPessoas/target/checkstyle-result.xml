@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.45.1">
+<file name="F:\ws\Sinerji\cadastroPessoas\src\main\java\com\sinerji\App.java">
+</file>
+<file name="F:\ws\Sinerji\cadastroPessoas\src\test\java\com\sinerji\AppTest.java">
+</file>
+<file name="F:\ws\Sinerji\cadastroPessoas\src\main\resources\db.properties">
+</file>
+</checkstyle>
